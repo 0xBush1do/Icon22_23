@@ -18,9 +18,9 @@ python -m venv Icon22_23
 - Attivare venv
 ```
 La medesima procedura si utilizza per Linux o Windows con GIT bash
-source ./venv/Scripts/activate
+source ./Icon22_23/Scripts/activate
 oppure
-source ./venv/bin/activate
+source ./Icon22_23/bin/activate
 ```
 
 - Installare le dipendenze
