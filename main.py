@@ -36,7 +36,7 @@ if __name__ == "__main__":
     acc_list.append(adaboost_cl(dataModel))
 
     # comparison models
-    compare_models(param="Score", param_list=acc_list, models_list=model_list_classifier)
+    compare_models(param="F-1 Score", param_list=acc_list, models_list=model_list_classifier)
 
     # learning Regression
     err_list.append(linearegression_reg(dataModel))

@@ -195,13 +195,14 @@ def decisiontree_cl(p_df):
     dtc_conf_matrix = confusion_matrix(y_test, dtc_predict)
     dtc_class_report = classification_report(y_test, dtc_predict)
     dtc_prob = dtc.predict_proba(X_test)[:, 1]
+    f1 = f1_score(y_test, dtc_predict)
 
     print(f"Accuracy Score of Decision Tree is : {dtc_accuracy}")
     print(f"Confusion Matrix : \n{dtc_conf_matrix}")
     print(f"Classification Report : \n{dtc_class_report}")
     plot_confusionmatrix(dtc_conf_matrix)
     roc_plot(y_test, dtc_prob)
-    return dtc_accuracy
+    return f1
 
 
 # RandomForest
@@ -233,7 +234,7 @@ def randomforest_cl(p_df):
     plot_confusionmatrix(rfcl_conf_matrix)
     roc_plot(y_test, rfcl_prob)
 
-    return rfcl_accuracy
+    return f1
 
 
 # GradientBoosting
@@ -256,6 +257,7 @@ def grandientboosting_cl(p_df):
     gb_cl_accuracy = accuracy_score(y_test, gb_cl_predict)
     gb_cl_conf_matrix = confusion_matrix(y_test, gb_cl_predict)
     gb_cl_class_report = classification_report(y_test, gb_cl_predict)
+    f1 = f1_score(y_test, gb_cl_predict)
 
     print(f"Accuracy Score of Gradient Boosting is : {gb_cl_accuracy}")
     print(f"Confusion Matrix : \n{gb_cl_conf_matrix}")
@@ -263,7 +265,7 @@ def grandientboosting_cl(p_df):
     plot_confusionmatrix(gb_cl_conf_matrix)
     roc_plot(y_test, gb_cl_prob)
 
-    return gb_cl_accuracy
+    return f1
 
 
 # AdaBoost
@@ -295,7 +297,7 @@ def adaboost_cl(p_df):
     plot_confusionmatrix(ab_cl_conf_matrix)
     roc_plot(y_test, ab_cl_prob)
 
-    return ab_cl_accuracy
+    return f1
 
 
 # Regression models
